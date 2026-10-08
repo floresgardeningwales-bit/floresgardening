@@ -1,0 +1,2 @@
+import SiteNav from '../../components/SiteNav';import LeadForm from '../../components/LeadForm';
+export default function Contact(){return <><SiteNav/><main className="narrowPage"><p className="eyebrow">GET IN TOUCH</p><h1>Tell me about the garden.</h1><p className="lede">A postcode, a few details and what you'd like help with is enough to start. I can then suggest the right visit and scope.</p><LeadForm/></main></>}
