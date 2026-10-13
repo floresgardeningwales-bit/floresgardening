@@ -39,7 +39,7 @@ This is deliberately **not** a landscaping-company template. The product is buil
 
 1. Create a Supabase project.
 2. Run `supabase/schema.sql` in the Supabase SQL editor.
-3. Copy `.env.example` to `.env.local` and fill in the Supabase values.
+3. Copy `.env.example` to `.env.local` and fill in the Supabase values. Set `NEXT_PUBLIC_SITE_URL` to the real canonical domain in Vercel.
 4. Create an owner user in Supabase Auth and insert their `staff_profiles` row as `owner`.
 5. Run:
 
@@ -50,7 +50,11 @@ npm run dev
 
 ## Vercel
 
-Import the repository into Vercel and add the same environment variables. No service-role key is exposed to the browser; it is only used by server-side owner routes.
+Import the repository into Vercel and add the same environment variables. `SUPABASE_URL` and `SUPABASE_SECRET_KEY` are server-only. `NEXT_PUBLIC_SITE_URL` should be the canonical production URL. Do not prefix the Supabase secret key with `NEXT_PUBLIC_`.
+
+## Enquiry form safeguards
+
+The public enquiry endpoint validates required fields, checks the UK postcode format, constrains accepted service/frequency values, limits free-text lengths, requires at least one reply method, and includes a honeypot field. For higher-volume production use, add persistent rate limiting (for example, a database-backed or edge rate limiter) and optional CAPTCHA/Turnstile protection; in-memory limits are not reliable across serverless instances.
 
 ## GitHub
 
