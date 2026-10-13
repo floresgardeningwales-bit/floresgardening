@@ -1,0 +1,9 @@
+/* Garden visitors: engraved creatures that occasionally wander across the page. */
+.gv-layer{position:fixed;inset:0;z-index:60;pointer-events:none;overflow:hidden;contain:strict}
+.gv-c{position:absolute;left:0;top:0;will-change:transform,opacity;user-select:none;filter:drop-shadow(0 0 .6px #f6f6ef) drop-shadow(0 0 2.5px rgba(246,246,239,.75))}
+.gv-art{display:block;width:100%;height:100%;overflow:visible}
+.gv-bee{position:relative}.gv-bee img{position:absolute;inset:0;width:100%;height:100%;max-width:none;pointer-events:none}
+.gv-bee [data-part=wingL]{transform-origin:45.9% 37.9%}.gv-bee [data-part=wingR]{transform-origin:63.4% 44.3%}
+.gv-trail{position:absolute;left:0;top:0;height:2px;border-radius:2px;background:linear-gradient(var(--dir,90deg),rgba(122,138,120,0),rgba(122,138,120,.55) 70%,rgba(122,138,120,.2));transition:opacity .3s}
+@media (prefers-reduced-motion:reduce){.gv-layer{display:none}}
+@media print{.gv-layer{display:none}}

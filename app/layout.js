@@ -1,5 +1,6 @@
 import '@fontsource-variable/bricolage-grotesque/opsz.css';
 import './globals.css';
+import './garden-visitors.css';
 import AnalyticsTracker from '../components/AnalyticsTracker';
 import { SITE_URL } from '../lib/site';
 

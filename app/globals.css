@@ -118,12 +118,11 @@ textarea { resize: vertical; }
 .editorialService h3{font-size:23px;line-height:1.15}.editorialService p{font-size:15px;line-height:1.55}.editorialService>div{grid-template-columns:46px minmax(0,1fr);gap:18px}.serviceSprig{width:46px;height:90px}
 }
 
-/* Garden visitors: engraved creatures that occasionally wander across the page. */
-.gv-layer{position:fixed;inset:0;z-index:60;pointer-events:none;overflow:hidden;contain:strict}
-.gv-c{position:absolute;left:0;top:0;will-change:transform,opacity;user-select:none;filter:drop-shadow(0 0 .6px #f6f6ef) drop-shadow(0 0 2.5px rgba(246,246,239,.75))}
-.gv-art{display:block;width:100%;height:100%;overflow:visible}
-.gv-bee{position:relative}.gv-bee img{position:absolute;inset:0;width:100%;height:100%;max-width:none;pointer-events:none}
-.gv-bee [data-part=wingL]{transform-origin:45.9% 37.9%}.gv-bee [data-part=wingR]{transform-origin:63.4% 44.3%}
-.gv-trail{position:absolute;left:0;top:0;height:2px;border-radius:2px;background:linear-gradient(var(--dir,90deg),rgba(122,138,120,0),rgba(122,138,120,.55) 70%,rgba(122,138,120,.2));transition:opacity .3s}
-@media (prefers-reduced-motion:reduce){.gv-layer{display:none}}
-@media print{.gv-layer{display:none}}
+/* Root the illustrations behind the photographs; tips frame the wordmark. */
+.editorialHero{isolation:isolate}.editorialMasthead{overflow:visible}.editorialMasthead h1{position:relative;z-index:2}.mastheadBotanical{z-index:1;transform-origin:50% 90%;opacity:1}.botanicalLeft{left:12%;bottom:-38px;width:clamp(80px,10vw,144px);transform:rotate(-12deg)}.botanicalRight{right:7%;bottom:-45px;width:clamp(105px,13vw,187px);transform:scaleX(-1) rotate(-8deg)}.editorialTriptych{position:relative;z-index:3;background:var(--paper)}
+@media(max-width:650px){.editorialMasthead{overflow:visible}.botanicalLeft{display:none}.botanicalRight{right:4%;bottom:-22px;width:48px;transform:scaleX(-1) rotate(-10deg);opacity:1}}
+
+/* Left foliage crosses the title; right foliage stays behind it. */
+.editorialMasthead .botanicalLeft{z-index:3}
+.editorialMasthead .botanicalRight{z-index:1}
+@media(max-width:650px){.editorialMasthead .botanicalLeft{display:block;left:12%;bottom:-22px;width:48px;transform:rotate(-12deg)}}
