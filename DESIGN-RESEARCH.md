@@ -3,7 +3,7 @@
 Implemented concept 02, using the three photographs supplied by the user.
 
 ## Visual direction
-- Official Flores Gardening illustrated logo, centred above the photographs with responsive sizing.
+- Large centred FLORES / GARDENING text above the photographs, with the official logo alone in the top-left navigation corner.
 - Three full-width photo panels: garden structure on the left, lawn and blue flowers in the wider centre, flower detail on the right.
 - Selected headline: A little care. A lot of life.
 - Ivory and evergreen interface, editorial rules and three service introductions.
