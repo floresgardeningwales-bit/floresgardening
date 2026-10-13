@@ -105,3 +105,15 @@ textarea { resize: vertical; }
 .editorialMasthead{position:relative}.mastheadBotanical{position:absolute;pointer-events:none;object-fit:contain;width:clamp(70px,10vw,150px);height:auto;z-index:1}.botanicalLeft{left:16%;bottom:-10px;transform:rotate(26deg);width:clamp(55px,7vw,105px)}.botanicalRight{right:6%;bottom:-12px;transform:rotate(24deg)}
 .serviceSprig{object-fit:contain;align-self:center}.editorialService:nth-child(2) .serviceSprig{transform:none}.editorialService:nth-child(3) .serviceSprig{transform:scaleX(-1) rotate(-8deg)}.editorialService>div>div{min-width:0}
 @media(max-width:650px){.mastheadBotanical{width:60px;opacity:.85}.botanicalLeft{left:8%;width:42px;bottom:0}.botanicalRight{right:2%;bottom:0}.editorialService>div{grid-template-columns:52px minmax(0,1fr);gap:18px}.serviceSprig{width:52px;height:100px}}
+
+/* Distinct masthead illustrations and a quieter mobile composition. */
+.botanicalRight{right:5%;bottom:0;transform:rotate(8deg);width:clamp(85px,12vw,175px)}
+.editorialService:nth-child(3) .serviceSprig{transform:none}
+@media(hover:hover){.editorialService:hover h3{text-decoration:underline}}
+@media(hover:none){.editorialService:hover h3{text-decoration:none}}
+@media(max-width:650px){
+.editorialNav{min-height:70px;padding-block:10px}.editorialMasthead{padding:12px 5vw 20px;overflow:hidden}.editorialMasthead h1{font-size:21.5vw;line-height:.88}.editorialMasthead h1>span{font-size:11px;letter-spacing:.48em;margin-top:16px;line-height:1.6}
+.botanicalLeft{display:none}.botanicalRight{width:30px;right:10%;bottom:10px;transform:rotate(10deg);opacity:.8}
+.editorialStatement{padding:23px 22px}.editorialStatement h2{font-size:clamp(27px,7.1vw,36px);line-height:1.14}.editorialStatement>p{letter-spacing:.07em;line-height:1.65}.editorialStatement .textLink{margin-top:16px}
+.editorialService h3{font-size:23px;line-height:1.15}.editorialService p{font-size:15px;line-height:1.55}.editorialService>div{grid-template-columns:46px minmax(0,1fr);gap:18px}.serviceSprig{width:46px;height:90px}
+}

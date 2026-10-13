@@ -21,3 +21,7 @@ Open DESIGN-PREVIEW.html to review the self-contained offline preview. Preview e
 Production build, internal links, image availability and preview JavaScript syntax checked. Browser visual checks are unavailable in this environment; live enquiry submission has not been tested.
 
 Botanical details use transparent PNG engravings rather than procedural SVG branches. Leafy sprigs frame the masthead; a separate echinacea illustrates planting. Generated with the built-in image tool: dark forest-green antique botanical copperplate engraving, fine crosshatching, natural leaf veins, transparent background, no text. Assets: public/botanical-leaf.png and public/botanical-flower.png.
+
+Refinement: distinct dog-rose engraving at the right of the masthead and for Renew. Mobile uses one small ornament beside the subtitle, tighter spacing, and a text-presentation arrow. Built-in generation prompt: airy antique dog-rose engraving, three flowers, forest-green ink, transparent background. Asset: public/botanical-rose.png.
+
+03 / Renew now uses a dedicated transparent bumblebee PNG (public/botanical-bee.png), generated in a matching forest-green natural-history engraving style. Dog rose remains the distinct right-hand masthead accent.
