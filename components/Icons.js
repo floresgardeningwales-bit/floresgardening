@@ -16,18 +16,3 @@ export function Icon({ name }) {
   }
 }
 
-// A scalloped hedge-line edge used between the yellow hero and the page.
-const HEDGE_PATH = (() => {
-  const w = 48;
-  let d = 'M0 0H1440V12';
-  for (let x = 1440; x > 0; x -= w) d += `A${w / 2} 22 0 0 1 ${x - w} 12`;
-  return `${d}Z`;
-})();
-
-export function HedgeEdge() {
-  return (
-    <svg className="hedgeEdge" viewBox="0 0 1440 48" preserveAspectRatio="none" aria-hidden="true">
-      <path d={HEDGE_PATH} />
-    </svg>
-  );
-}

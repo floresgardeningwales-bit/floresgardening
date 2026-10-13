@@ -7,13 +7,13 @@ const links = [
   ['/#areas', 'Areas'],
 ];
 
-export default function SiteNav({ tone = 'pollen' }) {
+export default function SiteNav({ tone = 'paper' }) {
   return (
     <header className={`siteNav nav-${tone}`}>
       <a className="skipLink" href="#main">Skip to content</a>
       <Link href="/" className="brand" aria-label="Flores Gardening home">
         <img src="/logo-mark-96.png" alt="" width="48" height="48" />
-        <span>Flores Gardening</span>
+        <span className="brandName">Flores<span>Gardening</span></span>
       </Link>
       <nav aria-label="Main navigation" className="navDesktop">
         {links.map(([href, label]) => <Link key={href} href={href}>{label}</Link>)}
