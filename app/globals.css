@@ -126,3 +126,26 @@ textarea { resize: vertical; }
 .editorialMasthead .botanicalLeft{z-index:3}
 .editorialMasthead .botanicalRight{z-index:1}
 @media(max-width:650px){.editorialMasthead .botanicalLeft{display:block;left:12%;bottom:-22px;width:48px;transform:rotate(-12deg)}}
+
+/* Mobile masthead: preserve the desktop wordmark's proportions and foliage overlap. */
+@media(max-width:650px){
+  .editorialMasthead{padding:12px 3vw 12px;overflow:visible}
+  .editorialMasthead h1{font-size:24vw;letter-spacing:-.045em;line-height:.85;white-space:nowrap}
+  .editorialMasthead h1>span{font-size:2.65vw;letter-spacing:.62em;line-height:1.5;margin:9px 0 0 .62em}
+  .editorialMasthead .botanicalLeft{display:block;left:7%;bottom:-7vw;width:20vw;transform:rotate(-12deg);opacity:1}
+  .editorialMasthead .botanicalRight{right:0;bottom:-8vw;width:24vw;transform:scaleX(-1) rotate(-8deg);opacity:1}
+}
+
+/* Quiet interaction details complement the one-time scroll reveals. */
+@media(prefers-reduced-motion:no-preference){
+  .textLink span,.serviceArrow{display:inline-block;transition:transform .35s cubic-bezier(.22,1,.36,1)}
+  .button,.almanacTabs button{transition:background-color .25s,color .25s,box-shadow .25s,translate .3s}
+  .almanacPanel{animation:seasonArrival .45s ease-out}
+  @keyframes seasonArrival{from{opacity:.35;translate:0 6px}to{opacity:1;translate:0 0}}
+}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){
+  .textLink:hover span,.textLink:focus-visible span{transform:translate(3px,-3px)}
+  .serviceItem:hover .serviceArrow{transform:translate(4px,-3px)}
+  .button:hover{translate:0 -2px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}

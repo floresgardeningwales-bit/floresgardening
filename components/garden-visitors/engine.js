@@ -414,8 +414,8 @@ const SPECIES = {
 /* ------------------------------------------------------------------ */
 export function startGardenVisitors(options = {}) {
   const opts = {
-    firstDelay: [7000, 14000], // ms before the first visitor
-    gap: [22000, 48000],       // ms between visitors
+    firstDelay: [1500, 3000], // ms before the first visitor
+    gap: [10000, 18000],       // ms between visitors
     maxAtOnce: 1,
     ...options,
   };
