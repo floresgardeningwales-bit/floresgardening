@@ -132,8 +132,8 @@ textarea { resize: vertical; }
   .editorialMasthead{padding:12px 3vw 12px;overflow:visible}
   .editorialMasthead h1{font-size:24vw;letter-spacing:-.045em;line-height:.85;white-space:nowrap}
   .editorialMasthead h1>span{font-size:2.65vw;letter-spacing:.62em;line-height:1.5;margin:9px 0 0 .62em}
-  .editorialMasthead .botanicalLeft{display:block;left:7%;bottom:-7vw;width:20vw;transform:rotate(-12deg);opacity:1}
-  .editorialMasthead .botanicalRight{right:0;bottom:-8vw;width:24vw;transform:scaleX(-1) rotate(-8deg);opacity:1}
+  .editorialMasthead .botanicalLeft{display:block;left:7%;bottom:-6vw;width:17vw;transform:rotate(-12deg);opacity:1}
+  .editorialMasthead .botanicalRight{right:0;bottom:-7vw;width:20.4vw;transform:scaleX(-1) rotate(-8deg);opacity:1}
 }
 
 /* Quiet interaction details complement the one-time scroll reveals. */
@@ -149,3 +149,9 @@ textarea { resize: vertical; }
   .button:hover{translate:0 -2px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Touch screens use a brief fade, with no sliding panels. */
+@media(max-width:650px) and (prefers-reduced-motion:no-preference){
+  .almanacPanel{animation:seasonFade .3s ease-out}
+  @keyframes seasonFade{from{opacity:.5}to{opacity:1}}
+}

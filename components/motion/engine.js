@@ -7,13 +7,16 @@ export function startSiteMotion() {
   const selector = 'main h1, main h2, main .eyebrow, .pageLede, .editorialStatement > p, .editorialTriptych > img, .editorialService, .serviceItem, .practiceCard, .serviceRows > div, .knowGrid > *, .nextSteps > li, .almanac, .areaGrid > *, .faqList > *, .footerMain';
   function reveal(el) {
     if (preference.matches || !el.isConnected) return;
+    const mobile = window.matchMedia('(max-width: 650px)').matches;
     const photo = el.matches('.editorialTriptych > img');
+    // Do not replay an entrance after a fast scroll has passed the element.
+    if (el.getBoundingClientRect().top < 0) return;
     const siblings = [...el.parentElement.children].filter(child => child.matches(selector));
-    const delay = Math.min(Math.max(siblings.indexOf(el), 0) * 65, 195);
-    const animation = el.animate([
-      { opacity: 0, transform: `translateY(${photo ? 14 : 18}px)` },
-      { opacity: 1, transform: 'translateY(0)' }
-    ], { duration: photo ? 900 : 720, delay, easing: 'cubic-bezier(.22,1,.36,1)', fill: 'backwards' });
+    const delay = mobile ? 0 : Math.min(Math.max(siblings.indexOf(el), 0) * 65, 195);
+    const frames = mobile
+      ? [{ opacity: 0.35 }, { opacity: 1 }]
+      : [{ opacity: 0, transform: `translateY(${photo ? 14 : 18}px)` }, { opacity: 1, transform: 'translateY(0)' }];
+    const animation = el.animate(frames, { duration: mobile ? 350 : photo ? 900 : 720, delay, easing: 'cubic-bezier(.22,1,.36,1)', fill: 'backwards' });
     active.add(animation);
     animation.onfinish = animation.oncancel = () => active.delete(animation);
   }
@@ -22,7 +25,7 @@ export function startSiteMotion() {
       observer.unobserve(entry.target);
       reveal(entry.target);
     }
-  }, { threshold: 0, rootMargin: '0px 0px -24px 0px' });
+  }, { threshold: 0, rootMargin: '0px 0px 80px 0px' });
   function scan() {
     if (preference.matches) return;
     for (const el of document.querySelectorAll(selector)) {
@@ -30,6 +33,8 @@ export function startSiteMotion() {
       // Avoid animating both a card and its nested heading at the same time.
       if (el.parentElement.closest(selector)) continue;
       seen.add(el);
+      // Already-visible content must never flash out after hydration or navigation.
+      if (el.getBoundingClientRect().top < window.innerHeight) continue;
       observer.observe(el);
     }
   }
