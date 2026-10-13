@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import SiteNav from '../components/SiteNav';
+import BotanicalSprig from '../components/BotanicalSprig';
 import SiteFooter from '../components/SiteFooter';
 import PostcodeCheck from '../components/PostcodeCheck';
 import SeasonAlmanac from '../components/SeasonAlmanac';
@@ -20,22 +21,32 @@ const questions = [
 
 export default function Home() {
   return <>
-    <SiteNav />
+    <SiteNav editorialHome />
     <main id="main">
-      <section className="gardenHero" aria-labelledby="hero-title">
-        <div className="gardenHeroCopy">
-          <p className="eyebrow">Female-led gardening · Cardiff &amp; the Vale</p>
-          <h1 id="hero-title">More time to enjoy your garden.</h1>
-          <p className="heroLede">Regular care, thoughtful planting and a helping hand when things get overgrown. We look after the work, so you can make more of your outdoor space.</p>
-          <Link className="button primary" href="/contact">Tell us about your garden <span aria-hidden="true">↗</span></Link>
-          <a className="textLink" href="#services">Explore our services <span aria-hidden="true">↓</span></a>
+      <section className="editorialHero" aria-labelledby="flores-title">
+        <div className="editorialMasthead">
+          <h1 id="flores-title">FLORES<span>GARDENING</span></h1>
+          <BotanicalSprig className="mastheadSprig sprigLeft" />
+          <BotanicalSprig className="mastheadSprig sprigRight" />
         </div>
-        <figure className="gardenHeroPhoto">
-          <img src="/garden.jpg" alt="A green garden with clipped hedges, established borders and a neatly edged lawn" width="1920" height="1280" fetchPriority="high" />
-          <figcaption>Room to grow. Space to enjoy.</figcaption>
-        </figure>
+        <div className="editorialTriptych" aria-label="Garden photography">
+          <img className="triptychStructure" src="/flores-garden-structure.jpg" alt="Layered flowering borders and leafy trees around a curved stone garden structure" width="1200" height="1600" fetchPriority="high" />
+          <img className="triptychLawn" src="/flores-lawn-borders.jpg" alt="A neatly mown lawn with blue delphiniums and colourful borders" width="1200" height="1600" fetchPriority="high" />
+          <img className="triptychFlowers" src="/flores-flower-detail.jpg" alt="Pink cosmos and warm orange flowers among fine green foliage" width="1200" height="1600" fetchPriority="high" />
+        </div>
+        <div className="editorialStatement">
+          <h2>A little care. A lot of life.</h2>
+          <p>Female-led garden care in Cardiff &amp; the Vale.</p>
+          <Link className="textLink" href="/services">Find your garden care <span aria-hidden="true">↗</span></Link>
+        </div>
+        <div className="editorialServices">
+          {[
+            ['01 / CARE', 'Regular garden maintenance', 'Thoughtful, seasonal care to keep your garden healthy and looking its best.', '/services#regular'],
+            ['02 / PLANT', 'Pruning, planting & borders', 'The right care and planting for a garden that keeps on growing.', '/services#planting'],
+            ['03 / RENEW', 'Garden clearances & wildlife-friendly care', 'A fresh start for your space, with room for the life within it.', '/services#one-off'],
+          ].map(([label,title,text,href]) => <Link href={href} className="editorialService" key={label}><span className="editorialServiceLabel">{label}</span><div><BotanicalSprig className="serviceSprig" /><div><h3>{title}</h3><p>{text}</p></div></div></Link>)}
+        </div>
       </section>
-      <div className="serviceStrip" aria-label="Garden care options"><span>Regular maintenance</span><span>Pruning &amp; hedges</span><span>Planting &amp; borders</span><span>One-off clearances</span></div>
 
       <section className="introSection wrap sectionSpace" id="about" aria-labelledby="intro-title">
         <p className="eyebrow">Welcome to Flores</p>
@@ -53,7 +64,7 @@ export default function Home() {
 
       <section className="natureSection" id="wildlife" aria-labelledby="nature-title">
         <div className="wrap natureGrid">
-          <figure className="naturePhoto"><img src="/planting.jpg" width="1100" height="1650" loading="lazy" alt="Layered green foliage and plants growing in pots beside a gravel path" /><figcaption>Planting, texture and space for nature.</figcaption></figure>
+          <figure className="naturePhoto"><img src="/flores-garden-structure.jpg" width="1200" height="1600" loading="lazy" alt="A planted garden border with flowers, trees and a curved stone structure" /><figcaption>Planting, texture and space for nature.</figcaption></figure>
           <div className="natureCopy"><p className="eyebrow">Our approach</p><h2 id="nature-title">Well cared for.<br />Full of life.</h2><p>A lovely garden has more going on than meets the eye. We make room for the birds, bees and other small lives that help it thrive.</p><ul className="natureList">{practices.map(p=><li key={p.title}><h3>{p.title}</h3><p>{p.text}</p></li>)}</ul><p className="natureNote">How wild you go is always up to you.</p></div>
         </div>
       </section>
