@@ -19,3 +19,5 @@ Public home, services and contact pages; service navigation; postcode checker; s
 Open DESIGN-PREVIEW.html to review the self-contained offline preview. Preview enquiries do not send or save data. Deploy the full project with the existing Next.js/Vercel setup and Supabase environment variables. No deployment was performed.
 
 Production build, internal links, image availability and preview JavaScript syntax checked. Browser visual checks are unavailable in this environment; live enquiry submission has not been tested.
+
+Botanical details use transparent PNG engravings rather than procedural SVG branches. Leafy sprigs frame the masthead; a separate echinacea illustrates planting. Generated with the built-in image tool: dark forest-green antique botanical copperplate engraving, fine crosshatching, natural leaf veins, transparent background, no text. Assets: public/botanical-leaf.png and public/botanical-flower.png.

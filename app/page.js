@@ -26,6 +26,8 @@ export default function Home() {
       <section className="editorialHero" aria-labelledby="flores-title">
         <div className="editorialMasthead">
           <h1 id="flores-title">FLORES<span>GARDENING</span></h1>
+          <BotanicalSprig className="mastheadBotanical botanicalLeft" />
+          <BotanicalSprig className="mastheadBotanical botanicalRight" />
         </div>
         <div className="editorialTriptych" aria-label="Garden photography">
           <img className="triptychStructure" src="/flores-garden-structure.jpg" alt="Layered flowering borders and leafy trees around a curved stone garden structure" width="1200" height="1600" fetchPriority="high" />
@@ -42,7 +44,7 @@ export default function Home() {
             ['01 / CARE', 'Regular garden maintenance', 'Thoughtful, seasonal care to keep your garden healthy and looking its best.', '/services#regular'],
             ['02 / PLANT', 'Pruning, planting & borders', 'The right care and planting for a garden that keeps on growing.', '/services#planting'],
             ['03 / RENEW', 'Garden clearances & wildlife-friendly care', 'A fresh start for your space, with room for the life within it.', '/services#one-off'],
-          ].map(([label,title,text,href]) => <Link href={href} className="editorialService" key={label}><span className="editorialServiceLabel">{label}</span><div><BotanicalSprig className="serviceSprig" /><div><h3>{title}</h3><p>{text}</p></div></div></Link>)}
+          ].map(([label,title,text,href]) => <Link href={href} className="editorialService" key={label}><span className="editorialServiceLabel">{label}</span><div><BotanicalSprig className="serviceSprig" variant={label.startsWith('02') ? 'flower' : 'leaf'} /><div><h3>{title}</h3><p>{text}</p></div></div></Link>)}
         </div>
       </section>
 
