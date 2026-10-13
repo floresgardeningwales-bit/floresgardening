@@ -1,3 +1,60 @@
-import SiteNav from '../../components/SiteNav';import Link from 'next/link';
-const services=[['Garden maintenance','Regular visits covering beds, lawns, weeding, seasonal cutbacks, pruning and general care.'],['Hedges & trimming','Shaping and seasonal maintenance of garden-scale hedges, with waste removal quoted separately where needed.'],['Fruit tree pruning','Apple, pear, plum and other garden fruit trees. Winter and summer pruning, shaping and neglected-tree restoration.'],['Planting & beds','Planting plans, border refreshes, seasonal planting, deadheading, dividing, mulching and ongoing bed care.'],['Garden clearances','One-off clearances and resets for gardens that have become overgrown or need a fresh start.'],['Wildlife-friendly gardening','Pollinator planting, habitat-conscious pruning, native plants and a lighter-touch approach where appropriate.']];
-export default function Services(){return <><SiteNav/><main className="narrowPage"><p className="eyebrow">SERVICES</p><h1>Garden care built around the garden you already have.</h1><p className="lede">No big tree surgery and no hard landscaping — the focus is garden-scale horticulture, maintenance and thoughtful improvement.</p><div className="serviceList">{services.map(([t,d],i)=><article key={t}><span>0{i+1}</span><div><h2>{t}</h2><p>{d}</p></div></article>)}</div><section className="pricingCallout"><p className="eyebrow">GUIDE PRICING</p><h2>Regular garden care from £75 per visit.</h2><p>Specialist pruning is priced separately where horticultural skill, access or waste disposal makes a simple hourly quote misleading. Every garden gets a clear quote before work begins.</p><Link className="button primary" href="/contact">Request a visit</Link></section></main></>}
+import Link from 'next/link';
+import SiteNav from '../../components/SiteNav';
+import SiteFooter from '../../components/SiteFooter';
+import { serviceGroups } from '../../lib/content';
+
+export const metadata = {
+  title: 'Garden services',
+  description: 'Regular garden maintenance, hedges, pruning, planting, fruit-tree work and one-off clearances across Cardiff and the Vale of Glamorgan.',
+};
+
+export default function Services() {
+  return <>
+    <SiteNav tone="paper" />
+    <main id="main">
+      <header className="pageHead wrap">
+        <h1>Garden care, at garden scale</h1>
+        <p className="pageLede">Practical, regular care and the occasional bigger job, for established home gardens across Cardiff and the Vale. Every visit is done with wildlife in mind.</p>
+        <nav className="jumpLinks" aria-label="Service groups">
+          {serviceGroups.map((g) => <a key={g.id} href={`#${g.id}`}>{g.title}</a>)}
+        </nav>
+      </header>
+
+      {serviceGroups.map((group) => (
+        <section key={group.id} id={group.id} className={`serviceGroup group-${group.id}`} aria-labelledby={`${group.id}-title`}>
+          <div className="wrap serviceGroupInner">
+            <div className="serviceGroupHead">
+              <h2 id={`${group.id}-title`}>{group.title}</h2>
+              <p>{group.intro}</p>
+            </div>
+            <dl className="serviceRows">
+              {group.services.map(([name, text]) => (
+                <div key={name}><dt>{name}</dt><dd>{text}</dd></div>
+              ))}
+            </dl>
+          </div>
+        </section>
+      ))}
+
+      <section className="wrap goodToKnow" aria-labelledby="know-title">
+        <h2 id="know-title">Good to know before you ask</h2>
+        <div className="knowGrid">
+          <div>
+            <h3>How quotes work</h3>
+            <p>We’ll look at the garden, or photos of it, and send a clear quote that says what’s included and how often. Nothing starts until you’ve agreed it.</p>
+          </div>
+          <div>
+            <h3>Green waste</h3>
+            <p>Removal isn’t included by default. Clippings can be left neatly on site or go in your own garden-waste arrangement, or we can quote for taking it away.</p>
+          </div>
+          <div>
+            <h3>What we don’t do</h3>
+            <p>Large trees, tree surgery and hard landscaping like patios or walls. If that’s what you need, we’ll say so straight away.</p>
+          </div>
+        </div>
+        <Link className="button primary" href="/contact">Request a quote</Link>
+      </section>
+    </main>
+    <SiteFooter />
+  </>;
+}

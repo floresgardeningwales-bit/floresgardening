@@ -1,3 +1,4 @@
+import '@fontsource-variable/bricolage-grotesque/opsz.css';
 import './globals.css';
 import AnalyticsTracker from '../components/AnalyticsTracker';
 import { SITE_URL } from '../lib/site';
@@ -18,7 +19,10 @@ export const metadata = {
     description: 'Friendly, ecological garden care for homes across Cardiff and the Vale of Glamorgan.',
   },
   robots: { index: true, follow: true },
+  icons: { icon: '/logo-mark-96.png', apple: '/logo-mark-96.png' },
 };
+
+export const viewport = { themeColor: '#f2c14e' };
 
 export default function RootLayout({ children }) {
   return <html lang="en-GB"><body><AnalyticsTracker />{children}</body></html>;
