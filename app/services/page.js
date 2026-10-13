@@ -13,8 +13,8 @@ export default function Services() {
     <SiteNav tone="paper" />
     <main id="main">
       <header className="pageHead wrap">
-        <h1>Garden care, at garden scale</h1>
-        <p className="pageLede">Practical, regular care and the occasional bigger job, for established home gardens across Cardiff and the Vale. Every visit is done with wildlife in mind.</p>
+        <p className="eyebrow">Gardening services · Cardiff &amp; the Vale</p><h1>The care your garden needs.</h1>
+        <p className="pageLede">From keeping on top of the everyday jobs to bringing an overgrown space back into use. Find the right help for your garden, with seasonal care and wildlife in mind.</p>
         <nav className="jumpLinks" aria-label="Service groups">
           {serviceGroups.map((g) => <a key={g.id} href={`#${g.id}`}>{g.title}</a>)}
         </nav>
@@ -25,7 +25,7 @@ export default function Services() {
           <div className="wrap serviceGroupInner">
             <div className="serviceGroupHead">
               <h2 id={`${group.id}-title`}>{group.title}</h2>
-              <p>{group.intro}</p>
+              <p>{group.intro}</p><Link className="textLink" href="/contact">Enquire about this service <span aria-hidden="true">↗</span></Link>
             </div>
             <dl className="serviceRows">
               {group.services.map(([name, text]) => (

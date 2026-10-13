@@ -1,21 +1,2 @@
 import Link from 'next/link';
-
-export default function SiteFooter() {
-  return (
-    <footer className="siteFooter">
-      <div className="footBrand">
-        <img src="/logo-mark.webp" alt="Flores Gardening logo" width="104" height="104" loading="lazy" />
-        <p>Female-led, wildlife-friendly garden care in Cardiff and the Vale of Glamorgan.</p>
-      </div>
-      <nav aria-label="Footer navigation" className="footNav">
-        <Link href="/services">Services</Link>
-        <Link href="/#wildlife">Wildlife-friendly gardening</Link>
-        <Link href="/#seasons">Through the year</Link>
-        <Link href="/#areas">Areas we cover</Link>
-        <Link href="/contact">Get a quote</Link>
-      </nav>
-      <p className="footSmall">Garden-scale work only: no large trees or hard landscaping. Green-waste removal is agreed separately when we quote.</p>
-      <p className="footSmall">© {new Date().getFullYear()} Flores Gardening</p>
-    </footer>
-  );
-}
+export default function SiteFooter(){return <footer className="siteFooter"><div className="footerMain"><div className="footBrand"><img src="/logo-mark.webp" alt="Flores Gardening" width="110" height="110" loading="lazy" /><div><p className="footerWordmark">Flores Gardening</p><p>Female-led garden care.<br />Cardiff &amp; the Vale of Glamorgan.</p></div></div><nav className="footNav" aria-label="Footer navigation"><Link href="/services">Our services</Link><Link href="/#about">About Flores</Link><Link href="/#wildlife">Our approach</Link><Link href="/#areas">Areas we cover</Link><Link href="/contact">Request a quote</Link></nav></div><div className="footerBottom"><span>© {new Date().getFullYear()} Flores Gardening</span><details className="imageCredits"><summary>Photography</summary><p>Illustrative garden imagery, not Flores project photographs. Garden: <a href="https://unsplash.com/photos/a-long-green-lawn-lined-with-trees-and-bushes-JMWqAmRnXUg">david Griffiths / Unsplash</a>. Plants: <a href="https://www.pexels.com/photo/plants-in-pots-4390618/">Damian Apanasowicz / Pexels</a>.</p></details></div></footer>}

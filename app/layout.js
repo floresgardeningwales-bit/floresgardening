@@ -22,7 +22,7 @@ export const metadata = {
   icons: { icon: '/logo-mark-96.png', apple: '/logo-mark-96.png' },
 };
 
-export const viewport = { themeColor: '#e5ecdf' };
+export const viewport = { themeColor: '#243d2b' };
 
 export default function RootLayout({ children }) {
   return <html lang="en-GB"><body><AnalyticsTracker />{children}</body></html>;
