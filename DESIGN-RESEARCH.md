@@ -3,7 +3,7 @@
 Implemented concept 02, using the three photographs supplied by the user.
 
 ## Visual direction
-- Oversized FLORES serif masthead with botanical line details and spaced GARDENING subtitle.
+- Official Flores Gardening illustrated logo, centred above the photographs with responsive sizing.
 - Three full-width photo panels: garden structure on the left, lawn and blue flowers in the wider centre, flower detail on the right.
 - Selected headline: A little care. A lot of life.
 - Ivory and evergreen interface, editorial rules and three service introductions.

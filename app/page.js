@@ -25,9 +25,7 @@ export default function Home() {
     <main id="main">
       <section className="editorialHero" aria-labelledby="flores-title">
         <div className="editorialMasthead">
-          <h1 id="flores-title">FLORES<span>GARDENING</span></h1>
-          <BotanicalSprig className="mastheadSprig sprigLeft" />
-          <BotanicalSprig className="mastheadSprig sprigRight" />
+          <h1 id="flores-title"><img className="officialMastheadLogo" src="/logo-mark.webp" alt="Flores Gardening" width="900" height="900" fetchPriority="high" /></h1>
         </div>
         <div className="editorialTriptych" aria-label="Garden photography">
           <img className="triptychStructure" src="/flores-garden-structure.jpg" alt="Layered flowering borders and leafy trees around a curved stone garden structure" width="1200" height="1600" fetchPriority="high" />
