@@ -25,5 +25,3 @@ Botanical details use transparent PNG engravings rather than procedural SVG bran
 Refinement: distinct dog-rose engraving at the right of the masthead and for Renew. Mobile uses one small ornament beside the subtitle, tighter spacing, and a text-presentation arrow. Built-in generation prompt: airy antique dog-rose engraving, three flowers, forest-green ink, transparent background. Asset: public/botanical-rose.png.
 
 03 / Renew now uses a dedicated transparent bumblebee PNG (public/botanical-bee.png), generated in a matching forest-green natural-history engraving style. Dog rose remains the distinct right-hand masthead accent.
-
-Masthead foliage grows inward from below the photo edge. Photograph strip masks stem bases; lettering remains above the illustrations. Mobile retains one smaller inward-facing rose branch anchored behind the photos.
