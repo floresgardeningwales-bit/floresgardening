@@ -2,6 +2,7 @@ import Link from 'next/link';
 import SiteNav from '../components/SiteNav';
 import MeetHannah from '../components/MeetHannah';
 import BeforeAfterGallery from '../components/BeforeAfterGallery';
+import CompletedGardens from '../components/CompletedGardens';
 import BotanicalSprig from '../components/BotanicalSprig';
 import SiteFooter from '../components/SiteFooter';
 import PostcodeCheck from '../components/PostcodeCheck';
@@ -57,6 +58,8 @@ export default function Home() {
         <div className="serviceIndex">{services.map(([number,title,description,detail,href])=><Link key={number} className="serviceItem" href={href}><span className="serviceNumber">{number}</span><h3>{title}</h3><div><p>{description}</p><span className="serviceDetail">{detail}</span></div><span className="serviceArrow" aria-hidden="true">↗︎</span></Link>)}</div>
         <p className="serviceScope">Home gardens, cared for properly. For large trees, tree surgery or hard landscaping, you’ll need a different specialist.</p>
       </section>
+
+      <CompletedGardens />
 
       <BeforeAfterGallery />
 

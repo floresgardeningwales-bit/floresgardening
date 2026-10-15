@@ -1,9 +1,9 @@
-FLORES — BEFORE & AFTER GALLERY
+FLORES — GARDEN PORTFOLIO PATCH
 
-Merge the app, components and public folders into your repository root, replacing matching files. Keep all other existing files. Commit/upload and redeploy as usual.
+Merge the app, components and public folders into your repository root, replacing matching files. Keep all other existing files. Commit/upload and redeploy.
 
-This cumulative patch includes Meet Hannah, so it works whether or not you installed the earlier Hannah patch.
+Includes all previous Meet Hannah and before-and-after changes, plus the new Gardens I’ve cared for gallery. Apply this whether or not you installed the earlier patches.
 
-Includes all 15 supplied comparisons, corrected sideways orientations, optimised WebP images, a three-card preview, View all control, and an enlarged photo viewer with previous/next and Escape-to-close. The navigation links to Before & after.
+19 completed-garden photos, matched to numbered captions; image 18 excluded. Six photos initially, View all, enlarged photo viewer with captions, previous/next and Escape-to-close. Our work navigation and footer links included. Small caption spelling/grammar corrections only.
 
-No new dependencies, environment variables or database changes. Production build passed; automated browser checks were unavailable in this environment.
+No dependency, database or environment changes. Production build and image/caption integrity checks passed. Browser interaction checks could not be run in this environment.
