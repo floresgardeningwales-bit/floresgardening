@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import SiteNav from '../components/SiteNav';
+import MeetHannah from '../components/MeetHannah';
 import BotanicalSprig from '../components/BotanicalSprig';
 import SiteFooter from '../components/SiteFooter';
 import PostcodeCheck from '../components/PostcodeCheck';
@@ -48,13 +49,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="introSection wrap sectionSpace" id="about" aria-labelledby="intro-title">
-        <p className="eyebrow">Welcome to Flores</p>
-        <div className="introGrid">
-          <h2 id="intro-title">Good garden care starts with paying attention.</h2>
-          <div><p>To the plants. To the season. And to what you want from your garden.</p><p>Flores is a female-led gardening business caring for home gardens across Cardiff and the Vale of Glamorgan. Whether you need regular help or a fresh start, we’ll work with what’s there and take the time to understand what matters to you.</p><Link className="textLink" href="/contact">Let’s find a starting point <span aria-hidden="true">↗︎</span></Link></div>
-        </div>
-      </section>
+      <MeetHannah />
 
       <section className="servicesSection wrap sectionSpace" id="services" aria-labelledby="services-title">
         <div className="sectionHead"><div><p className="eyebrow">How we can help</p><h2 id="services-title">A little help.<br />A lasting difference.</h2></div><p>From the jobs that come round every fortnight to the ones you’ve been putting off. Choose the care your garden needs.</p></div>
