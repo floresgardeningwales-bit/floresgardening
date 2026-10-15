@@ -1,7 +1,9 @@
-FLORES — MEET HANNAH PATCH
+FLORES — BEFORE & AFTER GALLERY
 
-Extract this ZIP and copy the app, components and public folders into the root of your existing repository, merging folders and replacing matching files. Do not delete the existing folders. Commit/upload these five files and redeploy as usual.
+Merge the app, components and public folders into your repository root, replacing matching files. Keep all other existing files. Commit/upload and redeploy as usual.
 
-Adds Hannah’s full supplied bio and an optimised portrait to the homepage, replacing the generic About Flores introduction. Navigation now reads Meet Hannah. Includes responsive styling and a contact link.
+This cumulative patch includes Meet Hannah, so it works whether or not you installed the earlier Hannah patch.
 
-Based on floresgardening-main (2).zip. No dependencies, environment variables or database changes required.
+Includes all 15 supplied comparisons, corrected sideways orientations, optimised WebP images, a three-card preview, View all control, and an enlarged photo viewer with previous/next and Escape-to-close. The navigation links to Before & after.
+
+No new dependencies, environment variables or database changes. Production build passed; automated browser checks were unavailable in this environment.
